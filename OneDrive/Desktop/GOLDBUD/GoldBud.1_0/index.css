@@ -1,0 +1,475 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #333; /* Цвет фона для всего сайта */
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto; /* Прижимает футер к нижней части экрана */
+}
+.container {
+    width: 85%; /* Немного увеличим */
+    margin: 0 auto;
+    max-width: 1100px; /* Чуть меньше максимальная ширина */
+}
+
+header {
+    background-color: #333; /* Пример: глубокий синий */
+    color: #fff;
+    padding: 0.8rem 0; /* Немного уменьшим паддинг */
+    border-bottom: 3px solid #FFD700; /* Золотая полоска снизу */
+    border-top: 3px solid #FFD700; /* Золотая полоска сверху */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Лёгкая тень */
+}
+
+header .container {
+    /* display: flex; */ /* Убираем flex, если нет навигации */
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    text-align: center; /* Выравниваем лого по центру */
+}
+
+/* Стили для логотипа */
+#logo {
+    height: 55px; /* Подберите нужную высоту */
+    width: auto;
+    vertical-align: middle;
+}    
+
+.logo-link {
+    display: inline-block;
+}
+
+/* Навигация убрана */
+/* nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1rem;
+} */
+
+#hero {
+    background-image: url('tools-864983.jpg'); /* Убедитесь, что файл изображения доступен */
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* Белый текст */
+    text-align: center;
+    padding: 120px 0; /* Увеличим отступ для эффектности */
+    position: relative; /* Для оверлея */
+    z-index: 1;
+}
+
+/* Оверлей для затемнения фона и улучшения читаемости текста */
+#hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.55); /* Черный с 55% прозрачностью */
+    z-index: -1;
+}
+
+#hero .container {
+   position: relative; /* Чтобы контент был над оверлеем */
+   z-index: 2;
+}
+
+
+#hero h2 {
+    font-size: 2.8rem; /* Крупнее заголовок */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Тень для читаемости */
+    font-weight: bold;
+}
+
+#hero p {
+    font-size: 1.2rem; /* Крупнее текст */
+    margin-bottom: 30px; /* Больше отступ до кнопки */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Тень для читаемости */
+}
+
+/* Стили для кнопки */
+.button {
+    /* background-color: #007bff; */ /* Старый синий */
+    background-color: #FFD700; /* Золотой */
+    color: #333; /* Темный текст на светлом фоне */
+    padding: 12px 25px; /* Увеличим кнопку */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase; /* Заглавные буквы */
+    letter-spacing: 1px; /* Небольшой разряд */
+    transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.2s; /* Плавный переход */
+    display: inline-block; /* Чтобы transform работал */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.button:hover {
+    background: #FFD700;
+    color: #222;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+/* Стили для секций Услуг, Калькулятора, Контактов удалены */
+
+/* Стили для подвала */
+footer {
+    background-color: #333; /* Dark background for contrast */
+    color: #fff; /* White text for readability */
+    padding: 5px; /* Увеличим паддинг */
+    text-align: center;
+    border-bottom: 3px solid #FFD700; /* Золотая полоска снизу */
+    border-top: 3px solid #FFD700; /* Золотая полоска сверху */
+}
+
+.footer-contacts {
+    margin-bottom: 10px;
+}
+
+.footer-contacts p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.footer-contacts a {
+    color: #ffd700; /* Gold color for links */
+    text-decoration: none;
+}
+
+.footer-contacts a:hover {
+    text-decoration: underline;
+}
+
+.footer-contacts i {
+    margin-right: 8px;
+    color: #ffd700; /* Gold color for icons */
+}
+
+footer i {
+    color: #ffd700; /* Gold color for copyright icon */
+}
+
+footer a {
+    color: #ffd700;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Увеличиваем ширину на мобильных */
+    }
+
+    #hero {
+        padding: 80px 0; /* Уменьшаем отступ на мобильных */
+    }
+    #hero h2 {
+        font-size: 2rem; /* Уменьшаем заголовок */
+    }
+
+     #hero p {
+        font-size: 1rem; /* Уменьшаем текст */
+    }
+
+    .footer-contacts {
+        font-size: 0.85em; /* Чуть меньше шрифт контактов на мобильных */
+    }
+
+    .footer-contacts a {
+        display: block; /* Ссылки в столбик для лучшей читаемости на мобильных */
+        margin: 5px 0;
+    }
+
+     .footer-contacts span { /* Скрываем разделители | */
+        display: none;
+     }
+}
+/* Секция с услугами */
+#services {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки */
+    gap: 20px;
+}
+
+.service {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service i {
+    font-size: 2.5rem;
+    color: #FFD700; /* Золотой цвет для иконок */
+    margin-bottom: 15px;
+}
+
+.service h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.service p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшетах */
+    }
+}
+
+@media (max-width: 480px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* 1 колонка на телефонах */
+    }
+
+    .footer-logo {
+        height: 50px; /* Логотип чуть меньше на телефонах */
+    }
+}
+/* Секция контактов */
+#contact {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Две колонки: информация и карта */
+    gap: 20px;
+    align-items: center;
+}
+
+.contact-info {
+    text-align: left;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.contact-info p {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i {
+    font-size: 1.5rem;
+    color: #FFD700; /* Золотой цвет для иконок */
+    margin-right: 10px;
+}
+
+.contact-info a {
+    color: #333;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.contact-map iframe {
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* Одна колонка на мобильных */
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+}
+
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
+
+    background-repeat: repeat;
+    background-size: 30px;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.logo {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== Галерея кнопка ===== */
+.gallery-button {
+    display: inline-block;
+    background-color: #FFD700;
+    color: #000;
+    padding: 12px 25px; /* Увеличим кнопку */
+    margin-top: 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.gallery-button:hover {
+    background-color: #e6c200;
+    transform: scale(1.05);
+}
+/* Общее правило для анимации */
+body {
+    opacity: 0;
+    transition: opacity 0.9s ease-in-out;
+}
+
+body.loaded {
+    opacity: 1;
+}
+a {
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+#testimonials {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #333;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.testimonial {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+}
+
+.testimonial p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.client-name {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #FFD700;
+}
+
+/* Добавим эффект при наведении */
+.testimonial:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Анимация для загружающихся отзывов */
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr 1fr; /* 2 колонки на экранах меньше 768px */
+    }
+
+    .section-title {
+        font-size: 1.5rem; /* Меньше шрифт для заголовка */
+    }
+
+    .testimonial {
+        padding: 15px; /* Меньше отступы на мобильных */
+    }
+
+    .testimonial p {
+        font-size: 0.9rem; /* Меньше шрифт для текста */
+    }
+}
+
+/* Очень маленькие экраны (например, смартфоны) */
+@media (max-width: 480px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr; /* 1 колонка на самых маленьких экранах */
+        gap: 20px; /* Меньше отступы между карточками */
+    }
+
+    .section-title {
+        font-size: 1.3rem; /* Ещё меньше заголовок */
+    }
+
+    .testimonial p {
+        font-size: 0.85rem; /* Меньше текст */
+    }
+
+    .testimonial {
+        padding: 10px; /* Ещё меньше отступы */
+    }
+}
