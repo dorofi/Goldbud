@@ -1,0 +1,31 @@
+/* ...existing code... */
+#order-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 30px auto;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+#order-form label {
+    font-weight: bold;
+    color: #333;
+}
+#order-form input, #order-form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+#order-form button.button {
+    width: fit-content;
+    align-self: flex-end;
+}
+#formMessage {
+    margin-top: 20px;
+    color: #28a745;
+    font-weight: bold;
+}
